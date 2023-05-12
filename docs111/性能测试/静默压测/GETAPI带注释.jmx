@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <!-- 测试计划组件  testname：名称 -->
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="GET请求的测试计划" enabled="true">
+      <!-- 字符串 测试计划的注释 注释的内容在标签内显示-->
+      <stringProp name="TestPlan.comments">这是一个get请求的测试计划</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    
+    <hashTree>
+      <!-- 查看结果树 -->
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">/Users/gigai/get.jtl</stringProp>
+      </ResultCollector>
+
+      <hashTree/>
+      <!-- 线程组 testname：名称 -->
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组" enabled="true">
+        <!-- 取样器错误后执行的动作  单词修改
+             继续：continue；
+             启动下一进程循环：startnextloop；
+             停止线程：stopthread；
+             停止测试：stoptest；
+             立即停止测试：stoptestnow；
+         -->
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <!-- 循环次数 是否勾选永远-->
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <!-- 循环次数 -->
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <!-- 线程数 -->
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <!-- ramp-UP时间 -->
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <!-- 调度器 默认不选中-->
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <!-- 持续时间 -->
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <!-- 启动延迟 -->
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <!-- 循环次数下的选择框 -->
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <!-- 勾选延迟创建线程直到需要，下列标签出现 -->
+        <!-- <boolProp name="ThreadGroup.delayedStart">true</boolProp> -->
+      </ThreadGroup>
+      <hashTree>
+        <!-- HTTP请求取样器 -->
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP请求" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <!-- 请求参数 无参数-->
+            <collectionProp name="Arguments.arguments"/>
+            <!-- 请求参数 有参数-->
+            <collectionProp name="Arguments.arguments">
+              <!-- 参数key -->
+              <elementProp name="a" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <!-- 参数value -->
+                <stringProp name="Argument.value">11</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <!-- 参数key -->
+                <stringProp name="Argument.name">a</stringProp>
+              </elementProp>
+            </collectionProp>
+
+          </elementProp>
+          <!-- IP -->
+          <stringProp name="HTTPSampler.domain">reqres.in</stringProp>
+          <!-- 端口 -->
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <!-- 协议 -->
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <!-- 编码格式 -->
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <!-- 请求路径 -->
+          <stringProp name="HTTPSampler.path">/api/users?page=2</stringProp>
+          <!-- 请求方式 -->
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <!-- 跟随重定向 -->
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <!-- 自动重定向 -->
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <!-- 使用keepalive -->
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+
+
+          <!-- 取样器高级配置，只有配置才显示该标签 客户端实现-->
+          <stringProp name="HTTPSampler.implementation">Java</stringProp>
+          <!-- 连接时间 -->
+          <stringProp name="HTTPSampler.connect_timeout">dfs</stringProp>
+          <!-- 响应时间 -->
+          <stringProp name="HTTPSampler.response_timeout">fsad</stringProp>
+          <!-- 取样器的注释 只有写了内容才显示该标签-->
+          <stringProp name="TestPlan.comments">ß</stringProp>
+
+
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

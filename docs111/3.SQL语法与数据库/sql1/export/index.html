@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>霍格沃兹测试开发</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/plugin/chalkboard/style.css">
+	
+	
+	
+		<link rel="stylesheet" href="libs/plugin/customcontrols/style.css">
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+	<link rel="stylesheet" href="libs/plugin/alibaba-puhui/puhui.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/league.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+        <section >
+            
+            <h1>MySQL</h1>
+<p>霍格沃兹测试开发学社</p>
+<p><a href="http://ceshiren.com">ceshiren.com</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>目录</h2>
+<ul>
+<li>数据库基本概念</li>
+<li>MySQL安装配置</li>
+<li>MySQL数据库登录</li>
+<li>数据库管理系统</li>
+<li>SQL</li>
+<li>DDL操作数据库</li>
+<li>DDL操作数据表</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Question</h2>
+<ul>
+<li>user.txt。</li>
+</ul>
+<pre><code>id    name    age
+1     张三     15
+2     李四     16
+3     王五     17
+4     赵六     18
+5     孙启     19
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>数据库基本概念</h2>
+<ul>
+<li>什么是数据库</li>
+<li>为什么使用数据库</li>
+<li>常见数据库</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>什么是数据库</h3>
+<ul>
+<li>存储和管理数据的仓库。</li>
+<li>本质是一个文件系统。</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>为什么使用数据库</h3>
+<table>
+<thead>
+<tr>
+<th>存储方式</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内存</td>
+<td>数据读取速度快</td>
+<td>不能够永久保存,数据是临时状态的</td>
+</tr>
+<tr>
+<td>文件</td>
+<td>数据可永久保存</td>
+<td>IO流操作文件，获取修改不方便</td>
+</tr>
+<tr>
+<td>数据库</td>
+<td>1.数据可永久保存<br>2.数据的存储和管理方便<br>3.统一的方式对数据进行操作</td>
+<td>占资源，有些付费</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>常见数据库</h2>
+<p><img src="assets/20230303162554.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>MySQL安装配置</h2>
+<ul>
+<li>
+<p>方式一：<a href="https://dev.mysql.com/downloads/mysql/">官方下载</a></p>
+</li>
+<li>
+<p>方式二：<a href="https://pan.baidu.com/s/1VtEXIogo_GS7iGh3f0nklw">网盘下载</a>  提取码：gxow</p>
+</li>
+<li>
+<p>安装步骤：<a href="https://ceshiren.com/t/topic/16070/4">https://ceshiren.com/t/topic/16070/4</a></p>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Mac-MySQL启动与关闭</h3>
+<ol>
+<li>系统偏好设置</li>
+<li>点击 MySQL 图标</li>
+<li>点击 Start MySQL Server 启动服务</li>
+<li>点击 Stop MySQL Server 关闭服务</li>
+</ol>
+<p><img src="assets/20230306112134.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Mac-命令行启动与关闭</h3>
+<ul>
+<li>
+<p>服务启动：</p>
+<pre><code class="language-bash">sudo /usr/local/mysql/support-files/mysql.server start
+
+# 配置环境变量后
+sudo mysql.server start
+</code></pre>
+</li>
+<li>
+<p>服务关闭：</p>
+<pre><code class="language-bash">sudo /usr/local/mysql/support-files/mysql.server stop
+
+# 配置环境变量后
+sudo mysql.server stop
+</code></pre>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Window-DOS命令方式启动</h3>
+<ol>
+<li>
+<p>首先以管理员身份 打开命令行窗口：</p>
+</li>
+<li>
+<p>启动MySql</p>
+<pre><code class="language-bash">net start mysql
+</code></pre>
+</li>
+<li>
+<p>关闭MySql</p>
+<pre><code class="language-bash">net stop mysql
+</code></pre>
+</li>
+</ol>
+<p><img src="assets/20230303170630.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>MySQL数据库登录</h2>
+<ul>
+<li>命令行登录/退出</li>
+<li>Workbench使用</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>命令行登录/退出</h3>
+<ul>
+<li>
+<p><strong>登录：</strong></p>
+<pre><code class="language-bash"># 使用指定用户名和密码登录当前计算机中的MySQL数据库
+mysql -u用户名 -p密码
+
+# -h 指定IP方式，进行登录
+mysql -h主机IP -u用户名 -p密码
+</code></pre>
+</li>
+<li>
+<p><strong>退出：</strong></p>
+<pre><code class="language-bash">exit;
+# 或者
+quit;
+</code></pre>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Navicat使用</h3>
+<p><strong>安装：</strong> <a href="https://navicat.com/en/download/navicat-premium">Navicat</a></p>
+<p><img src="assets/20230306173436.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>数据库管理系统</h2>
+<ul>
+<li>什么是数据库管理系统</li>
+<li>数据库管理系统、数据库和表的关系</li>
+<li>数据库表</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>什么是数据库管理系统</h3>
+<p>数据库管理系统(<code>DataBase Management System，DBMS</code>)：指一种操作和管理维护数据库的大型软件。</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>数据库管理系统、数据库和表的关系</h3>
+<p><img src="assets/20230305142458.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>数据库表</h3>
+<p><img src="assets/20230305152103.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>SQL</h2>
+<ul>
+<li>什么是SQL</li>
+<li>SQL通用语法</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>什么是SQL</h3>
+<p>结构化查询语言(Structured Query Language)简称SQL，它是一种特殊目的的编程语言，它的目的就是用来操作关系型数据库。</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>SQL通用语法</h3>
+<ol>
+<li>
+<p>SQL语句可以单行 或者 多行书写，以分号 结尾 <code>;</code> 。</p>
+</li>
+<li>
+<p>可以使用空格和缩进来增加语句的可读性。</p>
+</li>
+<li>
+<p>MySql中使用SQL不区分大小写。一般关键字大写，数据库名、表名、列名小写。</p>
+</li>
+</ol>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>练习</h3>
+<p>在Navicat上练习注释并分别运行截图。</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>SQL的分类</h3>
+<ul>
+<li>数据定义语言：
+<ul>
+<li>DDL(Data Definition Language)，用来定义数据库对象:数据库，表，列 等。</li>
+</ul>
+</li>
+<li>数据操作语言：
+<ul>
+<li>DML(Data Manipulation Language)，用来对数据库中表的记录进行更新。</li>
+</ul>
+</li>
+<li>数据查询语言：
+<ul>
+<li>DQL(Data Query Language)，用来查询数据库中表的记录。</li>
+</ul>
+</li>
+<li>数据控制语言：
+<ul>
+<li>DCL(Date Control Language)，用来定义数据库的访问权限和安全级别，及创建用户。</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>SQL的分类</h3>
+<p><img src="assets/20230306165856.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>DDL操作数据库</h2>
+<p>数据库的创建、查看、选择、修改、删除。</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>DDL创建数据库</h3>
+<ul>
+<li>命令模版：「见右侧🫱」</li>
+<li>练习：
+<ul>
+<li>创建名为jd的数据库。</li>
+<li>创建名为wechat的数据库并指定字符集为utf-8。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">-- 创建指定名称的数据库。
+create database 数据库名;
+-- 创建指定名称的数据库，
+-- 并且指定字符集(一般都指定utf-8)
+create database 数据库名 character set 字符集;
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>DDL查看/选择数据库</h3>
+<ul>
+<li>命令模版：「见右侧🫱」</li>
+<li>练习：
+<ul>
+<li>查看当前正在使用的数据库。</li>
+<li>使用jd数据库。</li>
+<li>数据库从jd 切换到 wechat。</li>
+<li>查看Mysql中有哪些数据库。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">-- 切换数据库
+use 数据库
+-- 查看当前正在使用的数据库
+select database();
+-- 查看Mysql中都有哪些数据库
+show databases;
+--  查看一个数据库的定义信息
+show create database 数据库名;
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>DDL修改数据库</h3>
+<ul>
+<li>命令模版：「见右侧🫱」</li>
+<li>练习：
+<ul>
+<li>将数据库jd 的字符集 修改为 utf8。</li>
+<li>查看当前正在使用的数据库。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">-- 数据库的字符集修改操作
+alter database 数据库名 character set 字符集; 
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>DDL删除数据库</h3>
+<ul>
+<li>命令模版：「见右侧🫱」</li>
+<li>练习：
+<ul>
+<li>将数据库 wechat 删除。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">-- 从MySql中永久的删除某个数据库
+drop database 数据库名
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>DDL 操作数据表</h2>
+<p>数据表的创建、查看、修改、删除。</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>MySQL常见的数据类型</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>整型</td>
+</tr>
+<tr>
+<td>double</td>
+<td>浮点型</td>
+</tr>
+<tr>
+<td>varchar</td>
+<td>字符串型</td>
+</tr>
+<tr>
+<td>date</td>
+<td>日期类型，给是为 yyyy-MM-dd ,只有年月日，没有时分秒</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>char与varchar区别</h3>
+<ul>
+<li>
+<p>char类型是固定长度的。</p>
+<ul>
+<li>适合存储 <strong>固定长度</strong>的字符串，比如：密码 ，性别一类。</li>
+</ul>
+</li>
+<li>
+<p>varchar类型是可变长度的。</p>
+<ul>
+<li>适合存储 在<strong>一定范围内，有长度变化</strong>的字符串。</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>创建表</h2>
+<ul>
+<li>命令模版：「见右侧🫱」
+<ul>
+<li>最后一列不要加逗号。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">CREATE TABLE 表名(
+    字段名称1 字段类型(长度)，
+    字段名称2 字段类型 
+);
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>创建商品分类表</h3>
+<ul>
+<li>表名：<code>category</code>。</li>
+<li>表中字段:
+<ul>
+<li>分类ID：<code>cid</code> ,为整型。</li>
+<li>分类名称：<code>cname</code>，为字符串类型，指定长度20。</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>创建测试表</h3>
+<ul>
+<li>表名：<code>test1</code>。</li>
+<li>表中字段:
+<ul>
+<li>测试ID：<code>tid</code> ,为整型。</li>
+<li>测试时间：<code>tdate</code> , 为年月日的日期类型。</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>复制表结构</h2>
+<ul>
+<li>
+<p>命令模版：「见右侧🫱」</p>
+<ul>
+<li>快速创建一个表结构相同的表。</li>
+</ul>
+</li>
+<li>
+<p>需求：</p>
+<ul>
+<li>创建一个表结构与 test1 相同的 test2表。</li>
+<li>查看表test2结构。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">create table 新表明 like 旧表名
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>查看表</h2>
+<ul>
+<li>命令模版：「见右侧🫱」</li>
+</ul>
+<pre><code class="language-sql">-- 查看当前数据库中的所有表名
+show tables;
+-- 查看数据表的结构
+desc 表名; 
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>查看商品分类表</h3>
+<ul>
+<li>查看当前数据库中的所有表名。</li>
+<li>显示商品分类表<code>category</code>的结构。</li>
+<li>查看创建表<code>category</code>的SQL语句。</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>查看测试表</h3>
+<ul>
+<li>查看当前数据库中的所有表名。</li>
+<li>显示测试表<code>test1</code>的结构。</li>
+<li>查看创建表<code>test1</code>的SQL语句。</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>删除表</h2>
+<ul>
+<li>命令模版：「见右侧🫱」</li>
+<li>需求：
+<ul>
+<li>直接删除test1表。</li>
+<li>先判断test2是否存在，存在的话就删除test2表。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">-- 删除表(从数据库中永久删除某一张表)
+drop table 表名;
+-- 判断表是否存在， 存在的话就删除,不存在就不执行删除
+drop table if exists 表名;
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>修改表</h2>
+<ul>
+<li>修改表名</li>
+<li>修改表的字符集</li>
+<li>向表中添加列</li>
+<li>修改列名称</li>
+<li>删除列</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>修改表名</h3>
+<ul>
+<li>命令模版：「见右侧🫱」</li>
+<li>需求：
+<ul>
+<li>将 <code>category</code> 表名改为 <code>category2</code>。</li>
+<li>将 <code>test2</code> 表名改为 <code>test01</code>。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">rename table 旧表名 to 新表名
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>修改表的字符集</h3>
+<ul>
+<li>命令模版：「见右侧🫱」</li>
+<li>需求：
+<ul>
+<li>将<code>category2</code>表的字符集 修改为<code>gbk</code>。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">alter table 表名 character set 字符集
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>向表中添加列</h3>
+<ul>
+<li>命令模版：「见右侧🫱」</li>
+<li>需求：为表category添加一个新的字段。
+<ul>
+<li>分类描述：cdesc。</li>
+<li>分类描述的数据类型：varchar(20)。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">alert table 表名 add 字段名称 字段类型
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>修改列数据类型或长度</h3>
+<ul>
+<li>命令模版：「见右侧🫱」
+<ul>
+<li>关键字：<strong>MODIFY</strong></li>
+</ul>
+</li>
+<li>需求：对表category的描述字段cdesc进行修改。
+<ul>
+<li>数据类型改为char(50)。</li>
+<li>数据类型长度改为varchar(50)。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">alter table 表名 modify 字段名称 字段类型
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>修改列名称</h3>
+<ul>
+<li>命令模版：「见右侧🫱」
+<ul>
+<li>关键字：<strong>CHANGE</strong></li>
+</ul>
+</li>
+<li>需求：对表category中的 desc字段进行更换。
+<ul>
+<li>更换为 description varchar(30)。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">alter table 表名 change 旧列名 新列名 类型(长度);
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>删除列</h3>
+<ul>
+<li>命令模版：「见右侧🫱」
+<ul>
+<li>关键字：<strong>DROP</strong></li>
+</ul>
+</li>
+<li>需求：删除表category中description这列。</li>
+</ul>
+<pre><code class="language-sql">alter table 表名 drop 列名;
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            
+            </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/plugin/zoom/zoom.js"></script>
+	<script src="libs/plugin/notes/notes.js"></script>
+	<script src="libs/plugin/search/search.js"></script>
+	<script src="libs/plugin/markdown/markdown.js"></script>
+	<script src="libs/plugin/highlight/highlight.js"></script>
+	<script src="libs/plugin/menu/menu.js"></script>
+	<script src="libs/plugin/math/math.js"></script>
+
+	<script src="libs/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/plugin/animate/plugin.js"></script>
+  	<script src="libs/plugin/animate/svg.min.js"></script>
+  
+  	
+
+ <!--	<script src="libs/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/plugin/customcontrols/plugin.js"></script>
+	<!-- <script src="libs/plugin/embed-tweet/plugin.js"></script> -->
+	<script src="libs/plugin/anything/plugin.js"></script>
+	<script src="libs/plugin/chart/chart.js"></script>
+	<script src="libs/plugin/chart/plugin.js"></script>
+	<script src="libs/plugin/hogwarts/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			// RevealEmbedTweet,
+			RevealChart,
+			
+			RevealHogwartsPPT,
+			
+
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				RevealMenu, 
+				RevealFullscreen,
+				//RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				RevealCustomControls, 
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			width: 1920,
+			height: 1080,
+			
+			plantuml: {
+				serverPath: 'https://plantuml.ceshiren.com/png/'
+			},
+
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: false,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'fade',
+			transitionSpeed: 'default',
+			backgroundTransition: 'fade',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'flex',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			//#width: 960,
+			//#height: 700,
+			//#margin: 0.04,
+			//#minScale: 0.2,
+			//#maxScale: 2.0
+			//#disableLayout: false
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,530 @@
+{
+    "value": {
+        "ready": true,
+        "message": "Selenium Grid ready.",
+        "nodes": [
+            {
+                "id": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                "uri": "http://10.1.1.178:5555",
+                "maxSessions": 16,
+                "osInfo": {
+                    "arch": "x86_64",
+                    "name": "Mac OS X",
+                    "version": "13.1"
+                },
+                "heartbeatPeriod": 60000,
+                "availability": "UP",
+                "version": "4.4.0 (revision e5c75ed026a)",
+                "slots": [
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "d6bfa09d-869e-4f72-80f6-87c7bc5a1683"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "45900e8f-4c7f-4a4e-a052-c2b0deb84fa6"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "5e852732-6b4f-4fd2-8916-0c9c5527308e"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "31169d68-d254-4810-b96e-7dd81088c5c2"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "799a1005-89a4-49d8-a2a7-dea9e0de2290"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "7e12b7f1-180b-4f1e-a897-f536feecdb50"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "284e26e8-c940-4d13-bedb-88c55dc4eb9d"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "bc87d692-12dd-4cfd-81eb-b1e06365751a"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "174e8dac-97c0-4dfb-b403-0bda2930699c"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "39174c23-3393-4ea4-a3a5-665144bdd2cc"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "f8f1863c-de32-4a22-bea0-5ffeb56d196b"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "c6efbbad-90e7-4d94-83d1-837cb13b138a"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "9cefbef1-c1d0-49e3-b20d-883f7175aa10"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "c82a2c47-5ee5-4181-a09c-7de747da8949"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "db90da28-adc0-45e4-be4a-8816d1609a9e"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "safari",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "085e076e-ce02-47da-9f06-370896ae08c9"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "6d4319b2-8236-4b77-82fd-4b6a96bb3846",
+                            "id": "45695f48-dfee-4799-bd50-e05e68e74422"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "MAC"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                "uri": "http://10.1.1.63:5555",
+                "maxSessions": 8,
+                "osInfo": {
+                    "arch": "amd64",
+                    "name": "Windows 10",
+                    "version": "10.0"
+                },
+                "heartbeatPeriod": 60000,
+                "availability": "UP",
+                "version": "4.4.0 (revision e5c75ed026a)",
+                "slots": [
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "a70e8fbe-28a0-4ea4-b7c4-2dceeba8fd80"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "firefox",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "59b65991-ae69-4e85-86e7-7aff5e7cc04e"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "8bbdc7fd-3f47-4a8e-8f66-8a4939c7ff15"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "191ee916-e9bd-48f9-91ed-688b4b138299"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "MicrosoftEdge",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "cc3e0237-2190-4fda-869c-cc171e4c356c"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "ff77c9b4-9aca-4bd3-b916-8bb8fe1054d0"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "bd15419d-a9c9-4dea-a691-bb9f0ab89f41"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "5a8b872f-5572-4e57-968c-0151a7151a5a"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "MicrosoftEdge",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "c5e04de1-cf43-4a3c-ba8f-603f85629eb0"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "MicrosoftEdge",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "df3841b0-d0f2-4f83-ac29-f2539ab07495"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "firefox",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "b2b9ec13-e9cb-4b40-8dc3-4e5c42bcf3c0"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "MicrosoftEdge",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "7b7e291d-4ca8-45b4-a138-6792b60b506a"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "MicrosoftEdge",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "daa118b6-de0b-4ba1-9713-59605e90caa9"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "MicrosoftEdge",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "61dc3e85-90d2-4959-b0dd-f7754954ac3e"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "firefox",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "a973ef9a-6506-4b34-ab56-1ac754017208"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "f3b12651-32d4-4707-878a-9348454afd9e"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "dbc6e856-5e4f-43fa-b85c-2dd2ffe731e1"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "chrome",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "031c9eb4-05ca-4242-ab6b-74ba8d36c7c3"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "MicrosoftEdge",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "046fe3ce-2eb5-43bf-b42d-00d0a8dc59d9"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "firefox",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "7cfcedb9-0fe6-4b59-bb6c-f607f9d34b78"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "firefox",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "16b14cd7-9217-4246-874d-cfd74d40551a"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "firefox",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "24aafe9c-1993-46c1-be14-2a73483f7c2a"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "firefox",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "4b096b2c-655e-4d9a-a920-50c25f253359"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "firefox",
+                            "platformName": "Windows 10"
+                        }
+                    },
+                    {
+                        "id": {
+                            "hostId": "51b7805d-75e5-4408-a57f-499a1b671b67",
+                            "id": "ebfac128-bb2d-43fb-a7ca-204816bbd581"
+                        },
+                        "lastStarted": "1970-01-01T00:00:00Z",
+                        "session": null,
+                        "stereotype": {
+                            "browserName": "MicrosoftEdge",
+                            "platformName": "Windows 10"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
