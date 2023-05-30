@@ -1,0 +1,39 @@
+# Selenium IDE
+
+## 本章要点
+1. 要点一
+1. 要点
+1. 要点
+1. **要点**
+
+## 安装
+
+![](assets/20230530175736.png)
+
+
+## 总结
+- 总结一
+- 总结二
+- 总结三
+https://github.com/Wechat-ggGitHub/Awesome-GitHub-Repo
+
+[项目演示地址](https://github.com/testeru-pro/junit5-demo/tree/main/junit5-basic)
+
+
+# 学习反馈
+
+1. SpringBoot项目的父工程为( )。
+
+   - [x] A. `spring-boot-starter-parent`
+   - [ ] B.`spring-boot-starter-web`
+   - [ ] C. `spring-boot-starter-father`
+   - [ ] D. `spring-boot-starter-super`
+<style>
+  strong {
+    color: #ea6010;
+    font-weight: bolder;
+  }
+  .reveal blockquote {
+    font-style: unset;
+  }
+</style>

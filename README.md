@@ -1,2 +1,4 @@
 # encoding
 
+
+docsify serve
