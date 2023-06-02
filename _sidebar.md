@@ -16,8 +16,16 @@
 * **UI自动化测试**
    
   * [UI自动化的价值与意义](./zh-cn/UI自动化/1001A_UI自动化的价值与意义.md)
+  * [测试策略](./zh-cn/UI自动化/1001B_测试策略.md)
   * **Web自动化测试**
-    * [Web自动化测试的价值与体系](./zh-cn/UI自动化/Web自动化/1001B_Web自动化测试的价值与体系.md)
+    * [Web自动化相关技术](./zh-cn/UI自动化/Web自动化/1001C_Web自动化相关技术.md)
+    * [Selenium介绍](./zh-cn/UI自动化/Web自动化/Selenium/1002A_Selenium介绍.md)
+    * [环境安装](./zh-cn/UI自动化/Web自动化/Selenium/1003A_环境安装.md)
+    * [SeleniumIDE](./zh-cn/UI自动化/Web自动化/Selenium/1004A_SeleniumIDE.md)
+    * [](./zh-cn/UI自动化/Web自动化/Selenium/1002A_Selenium介绍.md)
+    * [](./zh-cn/UI自动化/Web自动化/Selenium/1002A_Selenium介绍.md)
+    * [](./zh-cn/UI自动化/Web自动化/Selenium/1002A_Selenium介绍.md)
+    
 
 * JUnit5测试框架
    
