@@ -120,6 +120,7 @@ GET请求如下：
 
 注意⚠️：建议使用**未存在**文件。
 >JMeter默认参数配置中，`resultcollector.action_if_file_exists=ASK`，默认是询问用户。还有`APPEND`，`DELETE`选择使用。
+
 ```
 # Used to control what happens when you start a test and
 # have listeners that could overwrite existing result files
