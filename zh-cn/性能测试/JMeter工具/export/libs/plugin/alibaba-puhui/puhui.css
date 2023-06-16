@@ -1,0 +1,13 @@
+@font-face {
+    font-family: alibaba-light;
+    src: url("fonts/Alibaba-PuHuiTi-Light.otf");
+}
+@font-face {
+    font-family: alibaba;
+    src: url("fonts/Alibaba-PuHuiTi-Regular.otf");
+}
+@font-face {
+    font-family: alibaba-heavy;
+    src: url("fonts/Alibaba-PuHuiTi-Heavy.otf");
+}
+
