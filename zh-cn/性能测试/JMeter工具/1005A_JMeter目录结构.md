@@ -61,7 +61,7 @@ printable_docs文件夹
 
 ## 学习目标
 
-1. Window系统安装并打开JMeter工具。
+1. 。
 
 
 ## 思考
