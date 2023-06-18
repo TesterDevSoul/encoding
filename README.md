@@ -1,4 +1,0 @@
-# encoding
-
-
-docsify serve
