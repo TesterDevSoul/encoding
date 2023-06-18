@@ -7,6 +7,7 @@
 ```bash
 pip install pandas openpyxl
 ```
+
 ### 代码解读
 
 ```python
@@ -74,8 +75,8 @@ from pathlib import Path,PurePath
 import pandas as pd
 
 # xls 转换为 xlsx
-src_path = '/Users/gaigai/Desktop/测试用例xls'
-xlsx_path = '/Users/gaigai/Desktop/测试用例xlsx'
+src_path = '测试用例xls'
+xlsx_path = '测试用例xlsx'
 
 p=Path(src_path)
 files=[x for x in p.iterdir() if PurePath(x).match('*.xls')]
@@ -152,6 +153,126 @@ https://github.com/Wechat-ggGitHub/Awesome-GitHub-Repo
 
 
 
+
+## 文件转换
+
+单个XLS转为XLSX。
+
+
+```python
+# excel_file 文件转为 xlsx_file文件
+# 使用 pandas 库、使用 `xlrd` 引擎读取名为 excel_file 的 Excel 文件
+df = pd.read_excel(excel_file, engine="xlrd")
+# 将 DataFrame 保存到新的 Excel 文件中，不包括索引列
+df.to_excel(xlsx_file, index=False)
+```
+
+---
+
+
+
+### 课堂练习
+
+调查表汇总的XLS转为XLSX文件。
+
+![](assets/20230614115122.png)
+
+
+
+---
+
+### 课堂练习
+
+文件内的所有XLS转为XLSX。
+
+
+![](assets/20230613161840.png)
+
+
+---
+
+
+## 具体列数据汇总
+
+```python
+import pandas as pd
+
+new_excel = '/Users/gaigai/Desktop/LiteMall.xlsx'
+
+# 使用 pandas 库、使用 `openpyxl` 引擎读取名为 new_excel 的 Excel 文件
+df = pd.read_excel(new_excel, engine='openpyxl')
+
+# 更改为您要检查的列名，例如"A", "B"等
+column_name = "A"  
+# 使用value_counts()方法获取True和False计数
+true_false_counts = df[column_name].value_counts()
+# 统计个数
+true_count = true_false_counts.get(True, 0)
+false_count = true_false_counts.get(False, 0)
+
+print("True count:", true_count)
+print("False count:", false_count)
+```
+
+
+
+---
+
+### 课堂练习
+
+
+
+
+统计所有的测试用例的True、False个数。
+
+
+---
+
+## 生成图表
+
+```python
+from io import BytesIO
+
+import openpyxl
+from matplotlib import pyplot as plt
+from openpyxl.drawing.image import Image
+
+
+new_excel = '/Users/gaigai/Desktop/LiteMall.xlsx'
+
+labels = ['A', 'B', 'C', 'D']
+sizes = [25, 30, 20, 25]
+
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+plt.title("test",)
+plt.axis('equal')  # 设置为正圆形
+# plt.show()
+# 将饼图保存到内存中的图片文件中
+buf = BytesIO()
+plt.savefig(buf, format='png')
+buf.seek(0)  # 重置文件指针
+
+
+# 使用 openpyxl 处理新文件并插入图片
+workbook1 = openpyxl.load_workbook(new_excel)
+ws = workbook1.active
+
+
+image = Image(buf)
+ws.add_image(image, 'M1')  # 将图片插入到 Excel 的 'M1' 单元格
+
+ # 保存含有图像的 Excel 文件
+workbook1.save(new_excel)
+```
+
+
+
+
+---
+
+### 课堂练习
+
+统计所有的测试用例的True、Fasle并绘制成图表，写入文件。
 
 
 
