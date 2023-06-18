@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>霍格沃兹测试开发</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/plugin/chalkboard/style.css">
+	
+	
+	
+		<link rel="stylesheet" href="libs/plugin/customcontrols/style.css">
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+	<link rel="stylesheet" href="libs/plugin/alibaba-puhui/puhui.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/league.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+        <section >
+            
+            <h1>性能实战</h1>
+<p>霍格沃兹测试开发学社</p>
+<p><a href="http://ceshiren.com">ceshiren.com</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>目录</h2>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>JMeter介绍</h2>
+<pre style="all:unset;"><div><img class="plantuml" src="https://kroki.ceshiren.com/plantuml/svg/eNptkM1Kw0AQx-_7FLkJPQR9g2IFtVDwEPEcmhUi-ZBmQY-t2moxIdpaD-JBobR6SSJ-JU3iy5jZ7M1XcNMUFPEy7P5nfsyPqVpEbhFdNRRd3kdWU9awsLKMiEr4o97ABLeyMGaTTt6PaHuKKv-GFQGSNp1dQNdhL1Hxp1c-tTswvsmnDjgu87yvxIbJkbAhSVuf7Y5UK2p9bbUmiuJfgI4C6nj0LoHEXWB7lmlw4FDXFvPr25sCDGwBLtMsHrN7OwvHBTp0svSWXkccXUJIw7tEsFQFo187znoQHvM-fT1n_mhu3-vmqZfHJ1n8loUB-PbPOHUHPOWraP8RnsrxuSX7GMLprLQsUvb-ANEzuEHJcfEdVTEPuHVDbvJawwYxrUK_ivm5Fyf_Bnbdzkg=" /></div></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>JMeter安装</h2>
+<pre style="all:unset;"><div><img class="plantuml" src="https://kroki.ceshiren.com/plantuml/svg/eNpzKC5JLCrJzcxLyU0s4CpOTsxJVTA04CrJLAEyvHxTS1KLnq7rfLG4lUsLjaul8Lxv_dNFzU_b254uaQfygQoSyxLRBBWe9nU_37PyaU_ri-WLgWy4bi0F38Tk55t3P989H8wLBzohvxxJwCczr7QCzoda9nJVz4v1jWiWIQS1FLKAogq6ZalFxZn5eQoIsWSIHrAPsOjKBYkD9XE5pAJDAhoaANcOfvQ=" /></div></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>JMeter启动提示</h2>
+<pre><code class="language-bash"># 不要使用GUI模式进行负载测试 GUI模式只是压测脚本的创建和调试
+Dont use GUI mode for load testing !, only for Test creation and Test debugging.
+# 如果想要进行负载测试 使用CLI模式 即非GUI模式 -- 静默压测会详细介绍
+For load testing, use CLI Mode (was NON GUI):
+   jmeter -n -t [jmx file] -l [results file] -e -o [Path to web report folder]
+# 可以增加Java的堆来满足压测需求
+&amp; increase Java Heap to meet your test requirements:
+# 修改JMeter文件的Java堆变量
+   Modify current env variable HEAP=&quot;-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m&quot; in the jmeter batch file
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>压测脚本四要素</h2>
+<pre style="all:unset;"><div><img class="plantuml" src="https://kroki.ceshiren.com/plantuml/svg/eNpzKC5JLCrJzcxLyU0s4CpOTsxJVTA04CrJLAEynm3tfrF-6ot1C592TOLSQuE-nT37xbLG51sWcGlpKTzZ0fBkxyov39SS1KIXLbOezVnzZMdaFNX9q57N6YQoA2lAlgMqfdG--emGiXAVz3ftf76i-_nuFpBSNLmn_dOeLdj-dOYKLHLPZ098OmENSM4hFegfqJ8A8JeE9g==" /></div></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>用户定义的变量</h3>
+<pre style="all:unset;"><div><img class="plantuml" src="https://kroki.ceshiren.com/plantuml/svg/eNp1kMFqwkAQhu95ij14yqk-gOAT9Nj7UnMQjJSankpBRTGtWRNKElSEFlpoDjXqQY1i2pfZmehbdLLRY28_3zf_DEy1ZfF7y6w3aya_01q3vGGw8pVm1S0KmR-hvYV4KnfP2bQH7vg0cDX9P64z-FjieERJZ9fcNFiF3fDGg6HUIaCaUqXHogGeyKeeci3T2UWfBgI-hUx_CchEgOeAG-L7FiYRvDo4-gJ7Q1km8_x2ktAmtEN4ibDdgfZBHdv7VIbZHicLtfMY_2RpDP1v6K_A7WKwVLgoZf4b2h4xFHGB1QQ4Ia6Hx0VwNlWDnnR-1B8Y4qkR" /></div></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>线程组件</h2>
+<pre style="all:unset;"><div><img class="plantuml" src="https://kroki.ceshiren.com/plantuml/svg/eNp9kc1Og0AUhfc8BWtW-gZduHBpYn0Aoiya2Nq0JG6t_ZFKoShWo7YKhFjiAnShpUOQl5k_3sIpQ9Q0jbuZ79y55565lbYqt9R6rXFUl5tC-1A-VsTtLUGtqexAQEYCnSQ9mHwK0tpVEvcV9aD5AxmRRBgnv1VLHQ0NmlnUHRUiDb9IGuIPnUYTYkbI666wJKJLh6Yp53jyho2Qczy2IPA5z_sGeyusWRRteQENXaRdk4ce0-lLJ-8GSBtwPXCx_swUchNgbcGmgTEoncdX6ALsVqt7NFrg93NOaZjldyGfBAF7ZVpV5NbOyWnj_7SW-Sctc4PAxHGfWIMNmTUnv_c3ZO54yDeQNkNznf9XWR8tyyaJjZ-meDgvcpxB8Jh7M-TfsnzYcfPXEbYNmE6FisJWWq71G23hFQg=" /></div></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>产品介绍</h2>
+<ul>
+<li>被压测演示例子程序说明：
+<ul>
+<li>仅为用于课堂演示，被压测程序，无实际业务逻辑，Mock应用</li>
+<li>简单模拟一个订餐业务逻辑的Restful API 接口交互业务逻辑过程</li>
+<li>包含POST 、 GET、DELETE 请求</li>
+<li>使用python 3编写，源码在iJmeter项目中，python3 运行</li>
+<li><a href="https://github.com/princeqjzh/iJmeter">https://github.com/princeqjzh/iJmeter</a></li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>需求说明</h2>
+<ul>
+<li>被压测演示例子程序说明：</li>
+<li>包含4个练习用接口</li>
+<li>Demo：
+<ul>
+<li>运行一下</li>
+<li>源码讲解用法</li>
+</ul>
+</li>
+<li><img src="assets/ijmeter_calls.png" alt=""></li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>用户登录</h2>
+<ul>
+<li>定义请求名称：用户登录</li>
+<li>配置 Host 、Port、Path = /api/v1/user/login</li>
+<li>配置 Method = POST</li>
+<li>在Http Request中添加 Http Header Manager， 管理该请求的header信息</li>
+<li>添加 “View Result Tree” 用于查看 请求/响应 详情</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>请求头提取</h2>
+<ul>
+<li>在Http Header Manager中配置如下参数
+<ul>
+<li>Content-Type ： application/json</li>
+<li>access_token：python 源码中查找</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>浏览菜单</h2>
+<ul>
+<li>
+<p>创建浏览菜单接口请求</p>
+<ul>
+<li>添加HttpRequest请求</li>
+<li>配置请求名称：浏览菜单</li>
+<li>输入hostname, port, path = /api/v1/menu/list</li>
+<li>设定 Method = GET</li>
+</ul>
+</li>
+<li>
+<p>添加HTTP头管理器。</p>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>jmeter中文显示问题的解决</h2>
+<ul>
+<li>解决乱码问题 -&gt; 在&lt;jmeter_home&gt;/bin/jmeter.properties配置文件中设置 sampleresult.default.encoding=utf-8</li>
+<li>解决Unicode 显示成可读中文的问题 -&gt; 将 &lt;ijmeter_proj&gt;/unicode2utf8/unicode2utf8.js 内容复制粘贴到 BeanShell PostProcessor 中</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>订单确认</h2>
+<ul>
+<li>创建订单确认接口请求
+<ul>
+<li>添加HttpRequest请求</li>
+<li>配置请求名称：订单确认</li>
+<li>输入hostname, port, path = /api/v1/menu/confirm</li>
+<li>设定 Method = POST</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>用户注销</h2>
+<ul>
+<li>创建用户注销接口请求</li>
+<li>添加HttpRequest请求</li>
+<li>配置请求名称：用户注销</li>
+<li>输入hostname, port, path = /api/v1/user/logout</li>
+<li>设定 Method = DELETE</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>http 与 https 协议的区别</h2>
+<ul>
+<li>HTTP： 超文本传输协议</li>
+<li>HTTPS：安全超文本传输协议</li>
+<li>安全保障三原则：
+<ul>
+<li>内容加密：采用混合加密技术，中间者无法直接查看明文内容</li>
+<li>验证身份：通过证书认证客户端访问的是自己的服务器</li>
+<li>保护数据完整性：防止传输的内容被中间人冒充或者篡改</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>创建https请求</h2>
+<ul>
+<li>
+<p>网站使用机构可信证书：直接选择https协议即可</p>
+</li>
+<li>
+<p>网站使用自建证书： 将网站证书导入ssl manager 或 添加到系统的信任列表中 即可使用https协议</p>
+</li>
+<li>
+<p><img src="assets/https_create.png" alt=""></p>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>创建https请求</h2>
+<ul>
+<li>添加到ssl manager 中， 加入对应证书的key文件。位置： <iJmeter>/application/cert_files/</li>
+<li>运行时需要输入密码: 1234</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>本章小结</h2>
+<ul>
+<li>POST，GET, DELETE 接口请求</li>
+<li>请求中的配置参数 host, port, path</li>
+<li>body data中的请求参数 - json</li>
+<li>Http Request Header</li>
+<li>接口响应结果</li>
+<li>一点点调试小技巧 – 接口错误 vs 接口没有（404）</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Json后置处理器</h2>
+<p>不同的用户登录会是不同的token，需要把信息头的token不能固定，要根据不同的用户返回的结果放入。</p>
+<p><img src="assets/20230509212016.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>CSV多用户导入</h2>
+<ul>
+<li>从 CSV文件中导入多用户名 + 密码</li>
+<li>解析access token，获得用户的正确认证标识</li>
+<li>jmeter中的参数传递</li>
+<li><img src="assets/csv.png" alt=""></li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>并发压测中的事务控制</h2>
+<ul>
+<li>如果需要统计一组请求完成的总计时间，可以考虑使用事务控制器</li>
+<li>方法： 把需要统计的请求样本放入事务控制器中</li>
+</ul>
+<p><img src="assets/transaction_controller.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>静默压测</h2>
+<ul>
+<li>静默 -&gt; 脱离UI运行JMeter压测</li>
+<li>好处：命令运行更容易“搞事情”</li>
+<li>命令格式：  jmeter –n –t $jmx_file -l $jtl_file</li>
+<li>jmx： JMeter压测程序脚本文件，压测控制过程记录在jmx文件中</li>
+<li>jtl 文件是JMeter压测请求响应数据的原始文件</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Web压测报告生成</h2>
+<ul>
+<li>命令格式： jmeter -g /fullpath/result-file -e -o /fullpath/report/folder</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>自动化压测</h2>
+<ul>
+<li>为啥要自动化压测呢？
+<ul>
+<li>手动逐步加压</li>
+<li>需要人肉改并发数，然后等待完成</li>
+<li>烦 ！！！！！</li>
+</ul>
+</li>
+<li>所以，制定好策略，让程序自动加压，自动等待；完成后看压测监控记录，或者坐收报告</li>
+<li>计算机努力的干活，我去做更重要的事情</li>
+<li>希望测试生涯由此变得美好一些</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>自动化压测</h2>
+<ul>
+<li>实现思路：</li>
+<li>JMeter 脚本 （.jmx 文件） - 压测逻辑 与 xml 文件</li>
+<li>Shell – 控制逻辑</li>
+<li>JMeter 静默运行 – 脱离UI限制，使得自动化运行更稳定
+jmeter –n –t $jmx_file -l $jtl_file<br>
+注： jtl 文件是jmeter压测请求响应数据的原始文件</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>自动化压测</h2>
+<ul>
+<li>生成Web Report，命令：
+jmeter -g &lt;jmx_file&gt; -e -o &lt;web_report_path&gt;</li>
+<li>静默压测+生成 Web 压测报告整合
+jmeter –n –t $jmx_file -l $jtl_file  -e -o &lt;web_report_path&gt;</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>自动化压测</h2>
+<ul>
+<li>程序流程图</li>
+</ul>
+<p><img src="assets/auto.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>自动化压测</h2>
+<ul>
+<li>命令行导入并发数变量
+jmeter … –Jthread=100</li>
+</ul>
+<p><img src="assets/auto_setting.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>自动化压测</h2>
+<ul>
+<li>源码解读与实操演练</li>
+<li>源码位置：{iJMeter}/automation</li>
+</ul>
+<p><img src="assets/auto_code.png" alt=""></p>
+
+            </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/plugin/zoom/zoom.js"></script>
+	<script src="libs/plugin/notes/notes.js"></script>
+	<script src="libs/plugin/search/search.js"></script>
+	<script src="libs/plugin/markdown/markdown.js"></script>
+	<script src="libs/plugin/highlight/highlight.js"></script>
+	<script src="libs/plugin/menu/menu.js"></script>
+	<script src="libs/plugin/math/math.js"></script>
+
+	<script src="libs/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/plugin/animate/plugin.js"></script>
+  	<script src="libs/plugin/animate/svg.min.js"></script>
+  
+  	
+
+ <!--	<script src="libs/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/plugin/customcontrols/plugin.js"></script>
+	<!-- <script src="libs/plugin/embed-tweet/plugin.js"></script> -->
+	<script src="libs/plugin/anything/plugin.js"></script>
+	<script src="libs/plugin/chart/chart.js"></script>
+	<script src="libs/plugin/chart/plugin.js"></script>
+	<script src="libs/plugin/hogwarts/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			// RevealEmbedTweet,
+			RevealChart,
+			
+			RevealHogwartsPPT,
+			
+
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				RevealMenu, 
+				RevealFullscreen,
+				//RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				RevealCustomControls, 
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			width: 1920,
+			height: 1080,
+			
+			plantuml: {
+				serverPath: 'https://plantuml.ceshiren.com/png/'
+			},
+
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: false,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'fade',
+			transitionSpeed: 'default',
+			backgroundTransition: 'fade',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'flex',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			//#width: 960,
+			//#height: 700,
+			//#margin: 0.04,
+			//#minScale: 0.2,
+			//#maxScale: 2.0
+			//#disableLayout: false
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>
