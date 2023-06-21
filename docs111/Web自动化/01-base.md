@@ -1,6 +1,4 @@
----
-tags: auto,ui
----
+
 Web自动化模块知识点:
 - 1. `web`前端基础知识
 - 2. `selenium IDE`脚本录制回放

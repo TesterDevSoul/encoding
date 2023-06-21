@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="selenium-server-4.4.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/zh-cn/自动化/UI自动化/Web自动化/Selenium/SeleniumGrid/selenium-server-4.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
