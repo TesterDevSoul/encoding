@@ -138,7 +138,7 @@ scale 10
 
     <!-- <img src="assets/20230505180519.png" width="40%"/> -->
 
-2. 在配置文件中添加 CHROMEDRIVER_HOME，PATH的变量追加DRIVER配置：
+1. 在配置文件中添加 CHROMEDRIVER_HOME，PATH的变量追加DRIVER配置：
     ```bash
     CHROMEDRIVER_HOME=/Users/gaigai/.cache/selenium/chromedriver/mac64/113.0.5672.63
 
@@ -147,7 +147,7 @@ scale 10
     alias chromedriver=${CHROMEDRIVER_HOME}/chromedriver
     ```
 
-3. 终端输入 **source 配置文件名** 使环境变量生效。
+1. 终端输入 **source 配置文件名** 使环境变量生效。
 
     ```bash
     source ～/.zshrc 
@@ -155,7 +155,7 @@ scale 10
     
     ![配置文件路径| 800x196](assets/20230505180518.png)
 
-4. 重启命令行工具，输入 chromedriver --version。
+1.  重启命令行工具，输入 chromedriver --version。
    ![](assets/20230530150225.png)
 
 
