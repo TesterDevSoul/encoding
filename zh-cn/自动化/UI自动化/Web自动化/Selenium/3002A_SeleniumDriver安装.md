@@ -12,7 +12,7 @@
 scale 2
 start
 
-:1. 准备编程语言境;
+:1. 准备编程语言环境;
 note right: 例如：Python, Java, C#, etc.
 
 :2. 下载浏览器驱动程序Driver;
