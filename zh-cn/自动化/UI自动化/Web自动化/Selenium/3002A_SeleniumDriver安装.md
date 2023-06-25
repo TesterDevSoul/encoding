@@ -9,41 +9,71 @@
 
 ```plantuml
 @startuml
+scale 2
 start
 
-:1. 下载浏览器驱动程序;
-note right: ChromeDriver,GeckoDriver, etc.
+:1. 准备编程语言境;
+note right: 例如：Python, Java, C#, etc.
 
-:2. 配置驱动程序路径\n\t对Driver环境验证;
-note right: Mac和Windows可能有所不同\n验证：chromedriver --version
+:2. 下载浏览器驱动程序Driver;
+note right: ChromeDriver, GeckoDriver, etc.
 
+:3. 配置浏览器驱动程序Driver;
+note right: Mac和Windows可能有所不同
 
-:3. 安装Selenium库;
+:4. Driver环境验证;
+note right: chromedriver --version
+
+:5. 安装Selenium依赖;
 note right: 使用包管理器\n例如：pip, Maven, etc.
 
-:4. 代码验证;
+:6. 代码验证;
 note right: 编写代码并确保正确导入\nSelenium库
 
 @enduml
 ```
 
-## 1. 下载浏览器驱动程序
+## 1. 准备编程语言环境
+
+### Java 环境验证
+
+```bash
+java -version 
+```
+
+### Python 环境验证
+
+```bash
+python --version
+```
+
+
+## 2. 下载浏览器驱动程序Driver
 
 根据你要自动化测试的浏览器类型，下载相应的浏览器驱动程序。
 
 Selenium使用这些驱动程序来与浏览器进行通信和控制，[Slenium提供了相关的下载页面](https://www.selenium.dev/downloads/)。
 
->浏览器驱动程序作用是**将代码的请求转发给浏览器**。
+### 浏览器驱动作用
 
+浏览器驱动程序**作用**是**将代码的请求转发给浏览器**。
+
+### 浏览器驱动对应关系
+
+
+|浏览器|浏览器驱动|
+|---|---|
+|Chrome 浏览器|`ChromeDriver`|
+|Firefox 浏览器|`GeckoDriver`|
+|Internet Explorer 浏览器|`IEDriver`|
 
 常见的浏览器驱动程序包括`ChromeDriver`（用于Chrome浏览器）、`GeckoDriver`（用于Firefox浏览器）和 `IEDriver`（用于Internet Explorer浏览器）。
-
 
 下载适用于你的浏览器版本和操作系统的驱动程序，并将其保存到一个可访问的位置。
 
 ### ChromeDriver下载
 
-1. 打开下载页面。
+1. 打开下载页面，有以下几种网址：
 
    - [chromedriver官网](https://chromedriver.chromium.org/downloads)
 
@@ -65,7 +95,7 @@ Selenium使用这些驱动程序来与浏览器进行通信和控制，[Slenium�
    
     ![chromedriver版本下载|800x196](assets/20230530143744.png)
     
-    >根据自己的系统选择chromedriver，windows 只有32位的，因为Windows 64为也支持运行32为的。点击下载保存并进行解压，记下chromedriver 的路径
+    >根据自己的系统选择chromedriver，windows 只有**32位**的，因为Windows 64为也支持运行32为的。点击下载保存并进行解压，记下chromedriver 的路径
 
 
 
@@ -81,7 +111,7 @@ Selenium使用这些驱动程序来与浏览器进行通信和控制，[Slenium�
 
 
 
-## 2. 配置驱动程序路径
+## 3. 配置浏览器驱动程序Driver
 
 将下载的浏览器驱动程序的路径配置到系统的环境变量中，或者在代码中指定驱动程序的路径。
 
@@ -155,12 +185,14 @@ scale 10
     
     ![配置文件路径| 800x196](assets/20230505180518.png)
 
-1.  重启命令行工具，输入 chromedriver --version。
-   ![](assets/20230530150225.png)
 
 
 ### Java代码指定driver路径
 
+```java
+// 指定ChromeDriver的路径
+System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+```
 
 
 ### Python代码指定driver路径
@@ -174,13 +206,21 @@ from selenium import webdriver
 driver = webdriver.Chrome(executable_path='path/to/chromedriver')
 ```
 
-## 3. 安装 Selenium 库
+## 4. Driver环境验证
 
 
-### 3.1 Java 安装 Selenium 库
+1.  重启命令行工具，输入 chromedriver --version。
+   ![](assets/20230530150225.png)
 
 
-### 3.2 Python 安装 Selenium 库
+## 5. 安装 Selenium 依赖
+
+使用包管理器。
+
+### 5.1 Java 安装 Selenium 依赖
+
+
+### 5.2 Python 安装 Selenium 依赖
 
 使用pip命令来安装Selenium库。在终端或命令提示符中运行以下命令：
 
@@ -196,7 +236,23 @@ pip install selenium
 # 安装的路径
 /usr/local/Cellar/python@3.10/3.10.11/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/selenium
 ```
-## 4. 代码验证
+
+#### pip添加源
+
+[添加源](https://www.runoob.com/w3cnote/pip-cn-mirror.html)
+
+```python
+# 国内清华大学的源
+pip install selenium -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 中国科学技术大学 : https://pypi.mirrors.ustc.edu.cn/simple
+
+# 豆瓣：http://pypi.douban.com/simple/
+
+# 阿里云：http://mirrors.aliyun.com/pypi/simple/
+```
+
+## 6. 代码验证
 
 ### Java 打开浏览器
 
@@ -208,17 +264,56 @@ import time
 from selenium import webdriver
 
 # 创建一个 Chromdriver 的实例。Chrome()会从环境变量中寻找浏览器驱动
+# 打开一个空白的 data; 页面
 driver = webdriver.Chrome()
-# 打开网址
-driver.get("https://www.baidu.com/")
 # 强等10s 秒
 time.sleep(10)
 ```
 
+![](assets/20230625111303.png)
+
+
+想要打开具体的网址：
+
+
+```python
+import time
+# 导入selenium 包
+from selenium import webdriver
+
+# 创建一个 Chromdriver 的实例。Chrome()会从环境变量中寻找浏览器驱动
+# 打开一个空白的 data; 页面
+driver = webdriver.Chrome()
+# 打开网址  get()方法中需要传入要打开页面的URL
+driver.get("https://www.baidu.com/")
+# 强等10s 秒 看一下效果
+time.sleep(10)
+# 关闭driver 断开操作，回收资源 浏览器关掉、进程断开
+driver.quit()
+```
+
+>get相当于，driver可以操作电脑端的Chrome浏览器了，这时，客户端「代码」想要在浏览器上打开具体的网址，则使用get()方法。
+
+
+到此，环境搭建成功。使用的语法：
+
+```plantuml
+@startmindmap
+title 语法
+scale 10
+* Selenium
+** 打开浏览器
+*** driver = webdriver.Chrome()
+** 跳转到浏览器具体页面
+*** driver.get(URL)
+** 浏览器退出
+*** driver.quit()
+@endmindmap
+```
 
 ## 问题
 
-### 1. **代码启动报错**
+### 1. 代码启动报错
 
 ![](assets/webdriver_error.png)
 
